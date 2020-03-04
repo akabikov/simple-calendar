@@ -1,4 +1,4 @@
-import {genMonthArray} from "./genMonthArray.js";
+import {genMonth} from "./genMonth.js";
 
 export function createCalendar(elem, year, month) {
     
@@ -7,21 +7,21 @@ export function createCalendar(elem, year, month) {
         addCell(elem, day);
     })
 
-    const monthArr = genMonthArray(year, month-1);
-    monthArr.forEach(day => {
-        addCell(elem, day);
+    const monthArr = genMonth(year, month);
+    
+    monthArr.days.forEach(day => {
+        let cell = addCell(elem, day);
+
+        if (day === monthArr.currentDay) {
+            cell.classList.add("calend__day--current");
+        }
     })
     
-    // let formatter = Intl.DateTimeFormat("ru", {weekday: "short"});
-    // console.log(formatter.format(1));
-    
-
-    function addCell(elem, text = "") {
+    function addCell(elem, text) {
         let div = document.createElement("div");
         div.textContent = text;
-        div.classList.add("calendar__day");
+        div.classList.add("calend__day");
         elem.append(div);
+        return div;
     }
-
 }
-

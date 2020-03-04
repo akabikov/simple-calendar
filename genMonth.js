@@ -1,8 +1,6 @@
-export function genMonthArray (year, month) {
+export function genMonth (year, month) {
        
     const days = [];
-
-    month++;
 
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
@@ -20,8 +18,16 @@ export function genMonthArray (year, month) {
     for (let i = lastWeekDay + 1; i <= 7; i++) {
         days.push("");
     }
+
+    let today = new Date();
+    let currentMonth = today.getMonth();
+    let currentDay = 0;
     
-    return days;
+    if (month === currentMonth) {
+        currentDay = today.getDate();
+    }
+    
+    return {days, currentDay};
 
     function getWeekDay(day) {
         let weekDay = day.getDay();

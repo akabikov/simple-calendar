@@ -1,11 +1,15 @@
-.calendar {
+.calend {
     display: grid;
     grid-template-columns: repeat(7, 2rem);
     width: 20rem;
 }
 
-.calendar__day {
+.calend__day {
     display: flex;
     justify-content: center;
     border: 1px solid black;
+}
+
+.calend__day--current {
+    background: red;
 }
