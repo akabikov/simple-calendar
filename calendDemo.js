@@ -1,6 +1,6 @@
 import {createCalendar} from "./createCalendar.js";
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".calendar");
 
 let now = new Date();
 let year = now.getFullYear();

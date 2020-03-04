@@ -1,15 +1,11 @@
 export function createCalendar(elem, year, month) {
     const firstDay = new Date(year, month, 1);
 
-    
-    let table = document.createElement("table");
-    elem.append(table);
-    let tr = addRow();
-    
+        
     let i = 1;
     let firstWeekDay = getWeekDay(firstDay);
     while(i < firstWeekDay) {
-        addCell(tr);
+        addCell(elem);
         i++;
     }
 
@@ -17,27 +13,19 @@ export function createCalendar(elem, year, month) {
     
     
     while(currDay.getMonth() === month) {
-        addCell(tr, currDay.getDate());
-        if (currDay.getDay() === 0) {
-            tr = addRow();
-        }
+        addCell(elem, currDay.getDate());
         currDay.setDate(currDay.getDate() + 1);
     }
 
     // let formatter = Intl.DateTimeFormat("ru", {weekday: "short"});
+    // console.log(formatter.format(1));
+    
 
-
-
-    function addRow() {
-        let tr = document.createElement("tr");
-        table.append(tr);
-        return tr;
-    }
-
-    function addCell(tr, text = "") {
-        let td = document.createElement("td");
-        td.textContent = text;
-        tr.append(td);
+    function addCell(elem, text = "") {
+        let div = document.createElement("div");
+        div.textContent = text;
+        div.classList.add("calendar__day");
+        elem.append(div);
     }
 
     function getWeekDay(day) {
