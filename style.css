@@ -1,0 +1,9 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1rem);
+    width: 10rem;
+}
+
+.calendar__day {
+    border: 1px solid black;
+}
