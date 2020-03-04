@@ -1,22 +1,17 @@
+import {genMonthArray} from "./genMonthArray.js";
+
 export function createCalendar(elem, year, month) {
-    const firstDay = new Date(year, month, 1);
-
-        
-    let i = 1;
-    let firstWeekDay = getWeekDay(firstDay);
-    while(i < firstWeekDay) {
-        addCell(elem);
-        i++;
-    }
-
-    let currDay = firstDay;
     
-    
-    while(currDay.getMonth() === month) {
-        addCell(elem, currDay.getDate());
-        currDay.setDate(currDay.getDate() + 1);
-    }
+    const daysOfTheWeek = ["пн","вт","ср","чт","пт","сб","вс"];
+    daysOfTheWeek.forEach(day => {
+        addCell(elem, day);
+    })
 
+    const monthArr = genMonthArray(year, month-1);
+    monthArr.forEach(day => {
+        addCell(elem, day);
+    })
+    
     // let formatter = Intl.DateTimeFormat("ru", {weekday: "short"});
     // console.log(formatter.format(1));
     
@@ -28,10 +23,5 @@ export function createCalendar(elem, year, month) {
         elem.append(div);
     }
 
-    function getWeekDay(day) {
-        let weekDay = day.getDay();
-        if (weekDay === 0) weekDay = 7;
-        return weekDay;
-    }
 }
 
