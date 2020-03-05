@@ -21,9 +21,10 @@ export function genMonth (year, month) {
 
     let today = new Date();
     let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
     let currentDay = 0;
     
-    if (month === currentMonth) {
+    if ((month === currentMonth) && (year === currentYear)) {
         currentDay = today.getDate();
     }
     
@@ -34,4 +35,6 @@ export function genMonth (year, month) {
         if (weekDay === 0) weekDay = 7;
         return weekDay;
     }
+
+    
 }

@@ -2,12 +2,15 @@ import {genMonth} from "./genMonth.js";
 
 export function createCalendar(elem, year, month) {
     
+    elem.innerHTML = "";
+
     const daysOfTheWeek = ["пн","вт","ср","чт","пт","сб","вс"];
     daysOfTheWeek.forEach(day => {
-        addCell(elem, day);
+        let cell = addCell(elem, day);
+        cell.classList.add("calend__week_day");
     })
 
-    const monthArr = genMonth(year, month);
+    const monthArr = genMonth(year, month - 1);
     
     monthArr.days.forEach(day => {
         let cell = addCell(elem, day);

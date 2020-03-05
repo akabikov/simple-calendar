@@ -1,15 +1,21 @@
 .calend {
     display: grid;
-    grid-template-columns: repeat(7, 2rem);
-    width: 20rem;
+    grid-template-columns: repeat(7, 1.8rem);
+    grid-template-rows: repeat(7, 1.8rem);
+    margin: 1rem;
+}
+
+.calend__week_day {
+    font-weight: bold;
 }
 
 .calend__day {
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    align-items: center;
+    border: 1px solid rgb(151, 151, 151);
 }
 
 .calend__day--current {
-    background: red;
+    background: rgb(255, 136, 0);
 }
