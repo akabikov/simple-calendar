@@ -19,16 +19,10 @@ export function genMonth (year, month) {
         days.push("");
     }
 
-    let today = new Date();
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
-    let currentDay = 0;
-    
-    if ((month === currentMonth) && (year === currentYear)) {
-        currentDay = today.getDate();
-    }
+    let currentDay = getCurrentDay(year, month);
     
     return {days, currentDay};
+
 
     function getWeekDay(day) {
         let weekDay = day.getDay();
@@ -36,5 +30,16 @@ export function genMonth (year, month) {
         return weekDay;
     }
 
-    
+    function getCurrentDay(year, month) {
+        let today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+        let currentDay = 0;
+        
+        if ((month === currentMonth) && (year === currentYear)) {
+            currentDay = today.getDate();
+        }
+
+        return currentDay;
+    }
 }
