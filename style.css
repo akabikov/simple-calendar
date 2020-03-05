@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.month-input {
+    width: 12.6rem;
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
 .calend {
     display: grid;
     grid-template-columns: repeat(7, 1.8rem);
