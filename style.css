@@ -5,6 +5,8 @@
 
     --border-color: rgb(151, 151, 151);
     --current-day-color: rgb(255, 136, 0);
+
+    --margin-main: 1rem;
 }
 
 * {
@@ -13,13 +15,13 @@
 }
 
 .month-input {
-    margin: 1rem;
+    margin: var(--margin-main);
     margin-bottom: 0;
     width: var(--full-width);
 }
 
 .calend {
-    margin: 1rem;
+    margin: var(--margin-main);
     display: grid;
     grid-template-columns: repeat(7, var(--cell-size));
     grid-auto-rows: var(--cell-size);
