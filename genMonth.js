@@ -1,22 +1,19 @@
 export function genMonth (year, month) {
-       
-    const days = [];
-
+    
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
     
-    let firstWeekDay = getWeekDay(firstDay);
-    for (let i = 1; i < firstWeekDay; i++) {
-        days.push("");
-    }
-    
-    for (let i = 1; i <= lastDay.getDate(); i++) {
-        days.push(i);
-    }
+    const firstWeekDay = getWeekDay(firstDay);
+    const lastWeekDay = getWeekDay(lastDay);
 
-    let lastWeekDay = getWeekDay(lastDay);
-    for (let i = lastWeekDay + 1; i <= 7; i++) {
-        days.push("");
+    const lastDayDate = lastDay.getDate();
+    
+    const arrSize = (firstWeekDay - 1) + lastDayDate + (7 - lastWeekDay);
+    
+    const days = new Array(arrSize).fill("");
+    
+    for (let i = 1; i <= lastDayDate; i++) {
+        days[i + firstWeekDay - 2] = i;
     }
 
     let currentDay = getCurrentDay(year, month);
