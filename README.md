@@ -6,7 +6,6 @@
 * [General info](#general-info)
 * [Demo](#demo)
 * [Technologies](#technologies)
-* [Third party resources](#third-party-resources)
 * [Setup](#setup)
 * [Inspiration](#inspiration)
 
