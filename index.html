@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="month" name="month" class="month-input">
-    <div class="calend"></div>
+    <div class="app">
+        <div class="month-year">
+            <select name="month" id="month">
+                <option value="0">Январь</option>
+                <option value="1">Февраль</option>
+                <option value="2">Март</option>
+                <option value="3">Апрель</option>
+                <option value="4">Май</option>
+                <option value="5">Июнь</option>
+                <option value="6">Июль</option>
+                <option value="7">Август</option>
+                <option value="8">Сентябрь</option>
+                <option value="9">Октябрь</option>
+                <option value="10">Ноябрь</option>
+                <option value="11">Декабрь</option>
+            </select>
+            <input type="number" name="year" id="year" min="1" max="9999" step="1" value="">
+        </div>
+        
+        <div class="calend"></div>
+    </div>
+
     <script src="calendDemo.js" type="module"></script>
 </body>
 </html>

@@ -1,17 +1,24 @@
 import {createCalendar} from "./createCalendar.js";
 
 const container = document.querySelector(".calend");
-const input = document.querySelector(".month-input");
+const monthInput = document.querySelector("#month");
+const yearInput = document.querySelector("#year");
 
 let now = new Date();
 let year = now.getFullYear();
-let month = now.getMonth() + 1;
+let month = now.getMonth();
 
 createCalendar(container, year, month);
 
-input.value = `${year}-` + `0${month}`.slice(-2);
-input.addEventListener("change", () => {
-    [year, month] = input.value.split("-");
+monthInput.value = month;
+yearInput.value = year;
+
+monthInput.addEventListener("change", e => {
+    month = e.target.value;
     createCalendar(container, +year, +month);
 })
 
+yearInput.addEventListener("change", e => {
+    year = e.target.value;
+    createCalendar(container, +year, +month);
+})

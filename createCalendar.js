@@ -9,7 +9,7 @@ export function createCalendar(elem, year, month) {
         addCell(elem, day, ["calend__day", "calend__week_day"]);
     })
 
-    const monthArr = genMonth(year, month - 1);
+    const monthArr = genMonth(year, month);
     
     monthArr.days.forEach(day => {
         let styles = ["calend__day"];
