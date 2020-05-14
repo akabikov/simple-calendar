@@ -17,7 +17,7 @@ You can view online demo here: https://akabikov.github.io/simple-calendar/
 
 ## Technologies
 * Vanilla JS
-* JS native modules
+* ES6 native modules
 * CSS Grid
 * BEM
 
